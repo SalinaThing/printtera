@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printerra</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /*This is the CSS for the contact page*/
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(
+            to bottom,
+          #ffffff,
+          rgb(247, 228, 245, 0.7)
+        );
+            margin: 0;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 2000px;
+            margin: 0 auto;
+            margin-top: 130px;
+            height: 700px; 
+            width: 1800px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .left-contact-container {
+            width: 60%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .left-contact-container h2{ 
+            font-family: sans-serif;
+            font-size: 62px;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+        .right-contact-container {
+            width: 40%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .query-form {
+            margin-bottom: 20px;
+        }
+        .query-form p {
+            font-weight: 500;
+            font-family: sans-serif;
+            margin-bottom: 10px;
+        }
+        .query-form input{
+            width: 80%;
+            padding: 5px;
+            font-size: 20px;
+            border: 3px solid grey;
+            border-radius: 6px;
+            height: 40px; 
+        }
+        .query-form textarea {
+            width: 80%;
+            padding: 5px;
+            font-size: 12px;
+            border: 3px solid grey;
+            border-radius: 8px;
+            height: 50px;
+        }
+        .query-form .button {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .review{
+            margin-bottom: 20px;
+            width: 80%;
+        }
+        
+        .review th, td {
+            padding: 15px;
+        }
+        .review{
+            border: 3px solid grey;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--navigation bar-->
+    <header class="home-header">
+        <div class="logo">
+          <img src="images/printerralogo.png" />
+          <h1>PRINTERRA</h1>
+        </div>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li><a class="main-nav-link" href="index.html">Home</a></li>
+            <li><a class="main-nav-link" href="product.html">Product</a></li>
+            <li><a class="main-nav-link" href="research.html">References</a></li>
+            <li><a class="main-nav-link" href="blog.html">Blog</a></li>
+            <li><a class="main-nav-link" href="aboutus.html">About Us</a></li>
+            <li><a class="main-nav-link" href="contactus.html">Contact us</a></li>
+          </ul>
+        </nav>
+        <div class="buttons">
+          <ul class="button-search">
+            <li>
+              <img
+                class="search-icon"
+                src="images/searchbuttonnav.png"
+                alt="icon"
+              />
+            </li>
+            <li><img class="user-icon" src="images/userbuttonnav.png" /></li>
+          </ul>
+        </div>
+    </header>
+    <div class="contact-container">
+        <div class="left-contact-container">
+            <h2>GOT ANY QUERIES FOR US?</h2>
+            <h2>FEEL FREE</h2>
+            <h2>TO CONTACT US</h2>
+        </div>
+        <div class="right-contact-container">
+            <form>
+                <div class="query-form">
+                    <input type="text" class="name-query" placeholder="Your Name.....">
+                </div>
+                <div class="query-form">
+                    <input type="text" class="phone-query" placeholder="Your Phone.....">
+                </div>
+                <div class="query-form">
+                    <input type="text" class="email-query" placeholder="Your Email..... ">
+                </div>
+                <div class="query-form">
+                    <textarea class="text-query" placeholder="Write your query to Printerra"></textarea>
+                </div>
+                <div class="query-form">
+                    <p>Click the appropriate ones (Optional)</p>
+                    <table class="review">
+                        <tr>
+                          <td><input type="checkbox" class="checking-quality"></td>
+                          <td><p>Urgent?</p></td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox" class="checking-quality"></td>
+                          <td><p>Related to website?</p></td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox" class="checking-quality"></td>
+                          <td><p>Monetary?</p></td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox" class="checking-quality"></td>
+                          <td><p>Customer Problem?</p></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-group button">
+                  <button class="type-box-submit" onclick="queries()">
+                    Submit
+                  </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+          <div class="top footer-logo">
+            <div class="logo">
+              <img src="images/printerralogo.png" />
+              <h1>PRINTERRA</h1>
+            </div>
+            <div class="socials">
+              <img src="images/instagram.png" />
+              <img src="images/facebook.png" />
+              <img src="images/gmail.png" />
+            </div>
+            <div class="copyright">
+              <p>Copyright &copy; 2024 by Printerra.Inc. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="top address">
+            <h1 class="footer-head">Contact Info</h1>
+            <ul class="footer-description">
+              <li>kapan, Kathmandu</li>
+              <li>+977 9849591020, 01-4820006</li>
+            </ul>
+          </div>
+          <div class="top account">
+            <h1 class="footer-head">Account</h1>
+            <ul class="footer-description">
+              <li>My Account</li>
+              <li>My Orders</li>
+              <li>Sign in</li>
+              <li>Mobile app</li>
+            </ul>
+          </div>
+          <div class="top company">
+            <h1 class="footer-head">Company</h1>
+            <ul class="footer-description">
+              <li>About us</li>
+              <li>Terms & Condition</li>
+              <li>Return Policy</li>
+              <li>FAQs & Help</li>
+            </ul>
+          </div>
+          <div class="top others">
+            <h1 class="footer-head">Others</h1>
+            <ul class="footer-description">
+              <li>Sell on Printerra</li>
+              <li>Partnership</li>
+              <li>Printerra International</li>
+            </ul>
+          </div>
+        </div>
+    </footer>
+
+    <script> 
+      function queries() {
+        var your_name = document.getElementsByClassName(
+          "name-query"
+        )[0].value;
+        var your_phone = document.getElementsByClassName(
+          "phone-query"
+        )[0].value;
+        var your_email = document.getElementsByClassName(
+          "email-query"
+        )[0].value;
+        var your_query = document.getElementsByClassName(
+          "text-query"
+        )[0].value;
+        if (your_name == "" || your_phone == "" || your_email == "") {
+          alert("Empty space found. Please fill the form.");
+        } else {
+          alert("Thank you for filling the form!!!");
+        }
+      }
+    </script>
+</body>
+</html>

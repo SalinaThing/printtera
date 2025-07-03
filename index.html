@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printerra</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="author" content="Aayush Shrestha">
+    <style>
+      /***************************footer********************************************************************************/
+      footer {
+        background-color: white;
+        max-width: 100%;
+        padding: 70px 0;
+        height: 600px;
+      }
+      .footer-container {
+        height: 400px;
+        max-width: 2000px;
+        margin: 0 auto;
+        padding: 50px;
+  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+      }
+      .top {
+        height: 300px;
+      }
+      .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+      .socials {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+      .copyright p {
+        text-align: center;
+      }
+      .footer-head {
+        color: #272727;
+      }
+      .footer-description {
+        margin-top: 20px;
+        list-style: none;
+        font-size: 20px;
+        font-weight: 700;
+        color: grey;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    </style>
+    <style>
+      /*main****************************************************/
+      /*This section consists of the main visible part of the website when opened it consists of the carousel and search bar
+      options */
+      .section-hero {
+        background: linear-gradient(
+          to bottom,
+          #ffffff,
+          rgb(247, 228, 245, 0.7)
+        );
+        max-width: 100%;
+        height: 800px;
+        padding: 70px 0;
+      }
+      .hero {
+        max-width: 2000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+        padding: 30px;
+      }
+      /*left part of the section hero*/
+      .main-advertisement-item1 {
+        padding-left: 100px;
+      }
+      .main-heading {
+        font-size: 62px;
+        font-weight: 700;
+        color: black;
+
+        text-transform: uppercase;
+        margin-bottom: 80px;
+      }
+      /*search bar in the left side of the section hero*/
+      .search-container {
+        width: 600px;
+        height: 100px;
+        background-color: #fbf1fa;
+        display: flex; /*using flex to align the search form*/
+        align-items: center;
+        justify-content: center;
+      }
+      .search-bar {
+        background-color: #fbf1fa;
+        width: 700px;
+        height: 68px;
+        display: flex;
+        position: relative;
+      }
+      .search-input {
+        flex: 1;
+        border: 1px solid black;
+        border-radius: 40px;
+        font-size: 20px;
+        padding-left: 25px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+      .search-input:active {
+        background-color: white;
+      }
+      .search-submit {
+        height: 100%;
+        right: 0;
+        background-color: black;
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+        padding: 10px 50px;
+        outline: none;
+        border: red;
+        letter-spacing: 1px;
+        cursor: pointer;
+        border-radius: 40px;
+        position: absolute;
+        transition: background-color 0.4s;
+      }
+      .search-submit:hover,
+      .search-submit:active {
+        background-color: #272727;
+      }
+      /*sliding part of the carousel when clicked*/
+      .caroursel-container-item2 {
+        width: 100%;
+      }
+      .carousel {
+        width: 95%;
+        height: 400px;
+        background-color: #ffffff;
+        margin: 80px auto;
+        padding: 32px 50px 32px 100px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        color: black;
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        position: relative;
+        outline-width: 2px solid black;
+      }
+      .printer-heading {
+        font-style: italic;
+        color: grey;
+      }
+      .delivered-printers {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 90px;
+        border: 10px solid #ffffff;
+      }
+      .delivered-customers {
+        display: flex;
+      }
+      .delivered-customers img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin-right: -10px;
+      }
+      .delivered-customers img:last-child {
+        margin: 0;
+      }
+      .delivery-text {
+        font-style: normal;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .big-carousel-image {
+        height: 400px;
+        width: 450px;
+        border-radius: 10px;
+        transform: scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+      /*control button carousel used to control the elements of the carousel */
+      .button-carousel {
+        border: none;
+        background-color: #fff;
+        height: 60px;
+        width: 60px;
+        top: 50%;
+        border-radius: 50%;
+        position: absolute;
+        cursor: pointer;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+      .btn1 {
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+      .btn2 {
+        right: 0;
+        transform: translate(60%, -50%);
+      }
+      .carousel-togglers {
+        height: 40px;
+        width: 40px;
+        transition: all 0.5s;
+      }
+      .carousel-togglers:hover {
+        transform: scale(1.15);
+      }
+      .dot-button {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(270%, 32px);
+        display: flex;
+        gap: 12px;
+      }
+      .dot {
+        height: 12px;
+        width: 12px;
+        background-color: grey;
+        border: 2px solid grey;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .dot-black {
+        height: 12px;
+        width: 12px;
+        background-color: black;
+        border: 2px solid black;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    </style>
+
+    <title>Printerra</title>
+  </head>
+  <body>
+    <!--This is the navigation bar of the index page which consists of the logo and link to the other pages-->
+    <header class="home-header">
+      <div class="logo">
+        <img src="images/printerralogo.png" />
+        <h1>PRINTERRA</h1>
+      </div>
+      <!--Navigation link containers-->
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href="index.html">Home</a></li>
+          <li><a class="main-nav-link" href="product.html">Product</a></li>
+          <li><a class="main-nav-link" href="research.html">References</a></li>
+          <li><a class="main-nav-link" href="blog.html">Blog</a></li>
+
+          <li><a class="main-nav-link" href="aboutus.html">About Us</a></li>
+          <li><a class="main-nav-link" href="contactus.html">Contact us</a></li>
+        </ul>
+      </nav>
+      <!-- This consists of the buttons that are for the show but are the search and user icon button -->
+      <div class="buttons">
+        <ul class="button-search">
+          <li>
+            <img
+              class="search-icon"
+              src="images/searchbuttonnav.png"
+              alt="icon"
+            />
+          </li>
+          <li><img class="user-icon" src="images/userbuttonnav.png" /></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- This is the main section of the first visible part of the website -->
+      <section class="section-hero">
+        <div class="hero">
+          <div class="main-advertisement-item1">
+            <h1 class="main-heading">
+              Get the best<br />printer<br />at your door
+            </h1>
+            <div class="search-container">
+              <form class="search-bar">
+                <input
+                  type="text"
+                  placeholder="Search Your Product"
+                  class="search-input"
+                />
+                <button type="submit" class="search-submit">Submit Now</button>
+              </form>
+            </div>
+          </div>
+          <!-- This consists of the items in the carousel -->
+          <div class="carousel-container-item2">
+            <div class="carousel">
+              <div class="printer-heading">
+                <h1>
+                  "Browse through best quality printers at best price possible"
+                </h1>
+                <div class="delivered-printers">
+                  <div class="delivered-customers">
+                    <img src="images/firstperson.jpg" alt="people" />
+                    <img src="images/secondperson.jpg" alt="people" />
+                    <img src="images/thirdperson.jpg" alt="people" />
+                    <img src="images/fourthperson.jpg" alt="people" />
+                    <img src="images/fifthperson.jpg" alt="people" />
+                  </div>
+                  <p class="delivery-text">
+                    20,000+Printers sold this month!!!
+                  </p>
+                </div>
+              </div>
+              <img
+                class="big-carousel-image"
+                src="images/blackprinter.jpeg"
+                alt="printer picture"
+              />
+              <!-- this calls the function prev() and next() which changes the image present in the carousel -->
+              <button class="button-carousel btn1" onclick="prev()">
+                <img class="carousel-togglers" src="images/left-chevron.png" />
+              </button>
+              <button class="button-carousel btn2" onclick="next()">
+                <img class="carousel-togglers" src="images/right-chevron.png" />
+              </button>
+              <div class="dot-button">
+                <button class="dot-black">&nbsp;</button>
+                <button class="dot">&nbsp;</button>
+                <button class="dot">&nbsp;</button>
+                <button class="dot">&nbsp;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- This section consists of the products oveview available in the website -->
+    <section class="product">
+      <div class="product-header">
+        <h1 class="heading-secondary">OUR PRODUCTS</h1>
+        <h2 class="heading-secondary-product">"Get Best out of Technology"</h2>
+      </div>
+      <div class="product-categories">
+        <div class="category-1">
+          <img src="images/blackprinter.jpeg" />
+          <p>PRINTERS</p>
+        </div>
+        <div class="category-1">
+          <img src="images/toner.jpeg" />
+          <p>TONERS</p>
+        </div>
+        <div class="category-1">
+          <img src="images/accessories.jpeg" />
+          <p>ACCESSORIES</p>
+        </div>
+        <div class="category-1">
+          <img src="images/cleaner.jpeg" />
+          <p>CLEANING</p>
+        </div>
+      </div>
+      <!-- Product items of the website -->
+      <div class="container-product">
+        <div class="product-items">
+          <img src="images/inkjetprinter.jpg" class="product-img" alt="" />
+          <p class="product-1-description">INK-JET PRINTER</p>
+          <p class="product-1-attributes">
+            Bright colors and sharp images. The printer blends colors and gives
+            sharp photo outlines. You can enjoy glossy photos or high-quality
+            matte ones to frame.
+          </p>
+          <button class="product-button">View all</button>
+        </div>
+        <div class="product-items">
+          <img src="images/thermalprinter.jpeg" class="product-img" alt="" />
+          <p class="product-1-description">THERMAL PRINTER</p>
+          <p class="product-1-attributes">
+            Best to print the items such as receipts and bills in inexpensive
+            and portable way. Enhance your business by tenfolds with this
+            printer.
+          </p>
+          <button class="product-button">View all</button>
+        </div>
+        <div class="product-items">
+          <img
+            src="images/dotmatrixprinter.jpeg"
+            class="product-img"
+            alt=""
+          />
+
+          <p class="product-1-description">DOT-MATRIX PRINTER</p>
+          <p class="product-1-attributes">
+            Print writings in cost effective way. Get high quality printing for
+            your documents and paperworks with this printer.
+          </p>
+          <button class="product-button">View all</button>
+        </div>
+      </div>
+    </section>
+    <!-- This section consist of the list of the creator and description of them -->
+    <section class="creators">
+      <div class="product-header">
+        <h1 class="heading-secondary">OUR CREATORS</h1>
+      </div>
+
+      <div class="creators-left-image-right">
+        <div class="creators-description">
+          <div class="creators-description-people">
+            <img src="images/aayush.png" />
+            <p class="creators-description-text">
+              A tech guy who's willing to boost Printerra<br />
+              through unexpected roofs and enhance overall<br />
+              buyer seller experience
+            </p>
+            <p class="creators-name">-Aayush Shrestha</p>
+          </div>
+
+          <div class="creators-description-people">
+            <img src="images/anurodh.png" />
+            <p class="creators-description-text">
+              Providing best user experience with<br />
+              priority to time and security of the customers and shops.
+            </p>
+            <p class="creators-name">-Anurodh Prasain</p>
+          </div>
+
+          <div class="creators-description-people">
+            <img src="images/Salina.jpg" />
+            <p class="creators-description-text">
+              We value the market as much as you do.<br />
+              Market analysis and updates to the site <br />as per that is
+              ensured to be optimal.
+            </p>
+            <p class="creators-name">-Salina Thing</p>
+          </div>
+
+          <div class="creators-description-people">
+            <img src="images/Rijesh.jpg" />
+            <p class="creators-description-text">
+              Taking small businesses to top and providing <br />
+              high quality goods as low as we could is done.
+            </p>
+            <p class="creators-name">-Rijesh Karki</p>
+          </div>
+        </div>
+        <div class="creators-slider">
+          <img src="images/aayush.png" class="creators-image" />
+        </div>
+      </div>
+    </section>
+    <!-- Services section consists of the services provided by the website -->
+    <section class="services">
+      <div class="service-container">
+        <h1 class="heading-secondary">Browse Best Services</h1>
+      </div>
+      <div class="banner">
+        <div class="container-4column first">
+          <img src="images/service1.png" alt="icon" />
+          <header class="service">Get Free shipping</header>
+          <p class="description">Free on order above Rs4000</p>
+        </div>
+        <div class="container-4column second">
+          <img src="images/service2.png" alt="icon" />
+          <header class="service">Secured Payment</header>
+          <p class="description">Pay your bills with high-security</p>
+        </div>
+        <div class="container-4column third">
+          <img src="images/service3.png" alt="icon" />
+          <header class="service">Availability</header>
+          <p class="description">24/7 Service Availability</p>
+        </div>
+        <div class="container-4column fourth">
+          <img src="images/service4.png" alt="icon" />
+          <header class="service">Return in 28 Days</header>
+          <p class="description">Return any unsatisfied product</p>
+        </div>
+      </div>
+
+      <!-- This consists of the form in the index page to get in touch. More over and validation is implemented -->
+      <div class="signup-homepage">
+        <div class="service-container">
+          <h1 class="heading-secondary">Get in Touch</h1>
+        </div>
+        <form class="signup-homepage-form">
+          <input
+            type="text"
+            class="type-box nameholder"
+            placeholder="Your Name..."
+          />
+          <input
+            type="text"
+            class="type-box phoneholder"
+            placeholder="Your Phone..."
+          />
+          <input
+            type="text"
+            class="type-box emailholder"
+            placeholder="Your Email..."
+          />
+          <button class="type-box-submit" onclick="homepageContact()">
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- This is the footer section of the website which consits of the contact informations -->
+    <footer>
+      <div class="footer-container">
+        <div class="top footer-logo">
+          <div class="logo">
+            <img src="images/printerralogo.png" />
+            <h1>PRINTERRA</h1>
+          </div>
+          <div class="socials">
+            <img src="images/instagram.png" />
+            <img src="images/facebook.png" onclick="change()" style="cursor: pointer;" />
+            <img src="images/gmail.png" />
+          </div>
+          <div class="copyright">
+            <p>Copyright &copy; 2024 by Printerra.Inc. All rights reserved.</p>
+          </div>
+        </div>
+        <div class="top address">
+          <h1 class="footer-head">Contact Info</h1>
+          <ul class="footer-description">
+            <li>kapan, Kathmandu</li>
+            <li>+977 9849591020, 01-4820006</li>
+          </ul>
+        </div>
+        <div class="top account">
+          <h1 class="footer-head">Account</h1>
+          <ul class="footer-description">
+            <li>My Account</li>
+            <li>My Orders</li>
+            <li>Sign in</li>
+            <li>Mobile app</li>
+          </ul>
+        </div>
+        <div class="top company">
+          <h1 class="footer-head">Company</h1>
+          <ul class="footer-description">
+            <li>About us</li>
+            <li>Terms & Condition</li>
+            <li>Return Policy</li>
+            <li>FAQs & Help</li>
+          </ul>
+        </div>
+        <div class="top others">
+          <h1 class="footer-head">Others</h1>
+          <ul class="footer-description">
+            <li>Sell on Printerra</li>
+            <li>Partnership</li>
+            <li>Printerra International</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!--JavaScript for image toggle slider. This toggles the image when clicked left or right-->
+    <script>
+      var images=["images/blackprinter.jpeg","images/greenprinter.jpeg","images/anotherblackprinter.jpeg"];
+      var slider_img = document.querySelector(".big-carousel-image");
+      var currentid = 0; 
+      function prev(){ 
+        if (currentid===0){ 
+          currentid = images.length -1; 
+          slider_img.src = images[currentid];
+        }else{ 
+          currentid = currentid - 1; 
+          slider_img.src = images[currentid]; 
+        }
+      }
+      function next(){ 
+        if (currentid=== (images.length-1)){ 
+          currentid = 0; 
+          slider_img.src = images[currentid]; 
+        }else{ 
+          currentid = currentid + 1; 
+          slider_img.src = images[currentid];
+        }
+      }
+    </script>
+
+    <!--JavaScript for the form validation in contact details-->
+    <script>
+      function homepageContact() {
+        var your_name = document.getElementsByClassName(
+          "type-box nameholder"
+        )[0].value;
+        var your_phone = document.getElementsByClassName(
+          "type-box phoneholder"
+        )[0].value;
+        var your_email = document.getElementsByClassName(
+          "type-box emailholder"
+        )[0].value;
+
+        if (your_name == "" || your_phone == "" || your_email == "") {
+          alert("Empty space found. Please fill the form.");
+        } else {
+          alert("Thank you for filling the form!!!");
+        }
+      }
+      function change(){ 
+        window.location.href = "https://www.facebook.com/ayushrestha.5095110/";
+      }
+    </script>
+    <!-- This javascript portion slides the image in a fixed interval of the time of 3000ms -->
+    <script>
+      var slider = document.querySelector(".creators-image");
+      var imagecollection=["images/aayush.png","images/anurodh.png","images/Salina.jpg","images/Rijesh.jpg"];
+      var index =0; 
+      function imgsliderblog(){ 
+        index = (index+1) % imagecollection.length; 
+        slider.src = imagecollection[index]; 
+      }
+      setInterval(imgsliderblog, 3000);
+    </script>
+  </body>
+</html>

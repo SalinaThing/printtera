@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Salina Gurung">
+    <title>Printerra</title>
+    <link rel="Stylesheet" href="Style.css">
+    <!-- This is the CSS for the research page/reference page -->
+    <style>
+        *, *:before, *:after {
+            box-sizing:border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family:sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            padding: 30px; 
+            background-color:#faeff9; 
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2{
+            color: darkred;
+        }
+        h3{
+            color: grey;
+        }
+        /*Consists of the card where the different references and the actual pages are compared*/
+        .Card_Reference {
+            padding-right: 20px;
+            width: 100%;
+            border-radius:10px;
+            background-color: white;
+            margin: 10px;
+            margin-top: 30px;
+            line-height: 1.6;
+
+        }
+        /*This portions consists of the image in the website*/
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 100%;
+            padding-left: 20px;
+        }
+
+        .image-container .image-wrapper {
+            text-align: center;
+            width: 48%;
+            border-radius: 8px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container .image-name {
+            margin-top: 10px;
+        }
+        /*Comparison description is enlisted here*/
+        .description {
+            text-align: justify;
+            max-width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .Card_Reference:hover{
+            background-color: rgb(52, 51, 51,0.2);
+        }
+
+        .Card_Reference:active{
+            background-color: rgb(242, 148, 148,0.2);
+        }
+        p{ 
+            font-weight: 300;
+        }
+ 
+    </style>
+</head>
+<body>
+    <!--navigation bar of the website here-->
+    <header class="home-header">
+        <div class="logo">
+          <img src="images/printerralogo.png" />
+          <h1>PRINTERRA</h1>
+        </div>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li><a class="main-nav-link" href="index.html">Home</a></li>
+            <li><a class="main-nav-link" href="product.html">Product</a></li>
+            <li><a class="main-nav-link" href="research.html">References</a></li>
+            <li><a class="main-nav-link" href="blog.html">Blog</a></li>
+            <li><a class="main-nav-link" href="aboutus.html">About Us</a></li>
+            <li><a class="main-nav-link" href="contactus.html">Contact us</a></li>
+          </ul>
+        </nav>
+        <div class="buttons">
+          <ul class="button-search">
+            <li>
+              <img
+                class="search-icon"
+                src="images/searchbuttonnav.png"
+                alt="icon"
+              />
+            </li>
+            <li><img class="user-icon" src="images/userbuttonnav.png" /></li>
+          </ul>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Research and Reference</h1>
+        <!-- Start of Home Page -->
+        <div class="Card_Reference">
+            <h2>Home Page</h2>
+       
+              <div class="image-container" >
+                <div class="image-wrapper"style="border: 3px solid black;">
+                    <img src="images/printerrahome.png" alt="Home Page Image">
+                  <div class="image-name">Home page</div>
+                <!--End of class="image-wrapper" -->
+                  </div>
+                <div class="image-wrapper">
+                    <img src="images/omnifood.png" style="border: 3px solid black;" alt="OmniFood Image">
+                  <div class="image-name">Reference Homepage</div>
+                  </div>
+              <!--End of class="image-container" -->     
+              </div>
+        
+              <div class="description">
+                <h3>Description</h3>
+                <p>This is the main section of page where we display online Storefront. It keeps the impressions of customers to the sites to do any online activities further. So, here we compare our home page with the e-commerce site of food called OmniFood Home page. <br>
+                In comparison with the omnifood, our website consists of the search bar and a carousel instead of just putting in the image. Also the navigation bar is made more visible and included with different page links.
+                </p>
+              </div>
+            <!-- End of Card_Reference -->
+        </div>
+        <!-- Start of Products -->
+        <div class="Card_Reference">
+            <h2>Product Page</h2>
+
+              <div class="image-container">
+                <div class="image-wrapper">
+                    <img src="images/printerraproduct.png" style="border: 3px solid black;"  alt="our Product Page">
+                  <div class="image-name">Product Page</div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="images/amazonproduct.png" style="border: 3px solid black;"  alt="ref Product Page">
+                  <div class="image-name">Reference Product Page</div>
+                </div>
+              </div>
+
+              <div class="description">
+                <h3>Description</h3>
+                <p>This is the place where we show our product items detailly. The product page is referenced from amazon product page which consists of generic side bar which has been improved with check box options. <br>
+                Similarly, the product cards have been designed with different aspects and designs in comparison to the amazon website.</p>
+              </div>
+        </div>
+
+        <!-- Start of Blog -->
+        <div class="Card_Reference">
+            <h2>Blog Page</h2>
+
+          <div class="image-container">
+            <div class="image-wrapper">
+                <img src="images/printerrablog.png" alt="our Blog Page"style="border: 3px solid black;">
+              <div class="image-name">Blog Page</div>
+            </div>
+            <div class="image-wrapper">
+                <img src="images/camerastore.png" alt="ref Blog Page" style="border: 3px solid black;">
+              <div class="image-name">Reference Blog Page</div>
+            </div>
+          </div>
+
+          <div class="description">
+            <h3>Description</h3>
+            <p>The blog page is derived from the "The camera store" website where the blogs are posted in a vertical manner. The blog in our website consists of zig zag paragraph design which consists of image on the upper right and lower left that is slid on a regular interval of time. The contents written are in accordance with the impact of technology in different aspects.<p>
+          </div>
+        </div>
+
+        <!-- Start of About Us -->
+        <div class="Card_Reference">
+
+            <h2>About Us Page</h2>
+          <div class="image-container">
+            <div class="image-wrapper">
+                <img src="images/printerrabout.png" alt="About Us Page" style="border: 3px solid black;">
+              <div class="image-name">About Us Page</div>
+            </div>
+            <div class="image-wrapper">
+                <img src="images/lyft.png"ref About Us Page" style="border: 3px solid black;">
+               <div class="image-name">Reference About Us Page</div>
+            </div>
+          </div>
+
+          <div class="description">
+            <h3>Description</h3>
+              <p>This is the section where we have mentioned our team members and our journey till here. Here, the reference was "lyft" webiste which consists of the reviews and different options and images. Instead of this, we made it to integrate our memeber's portfolio with this style. The member's pictures and also different description about the website's development have been enlisted here</p>
+          </div>
+        </div>
+
+    <!-- Start of FeedBack Form -->
+        <div class="Card_Reference">
+          <h2>Feedback Form Page</h2>
+
+            <div class="image-container">
+              <div class="image-wrapper">
+                <img src="images/feedbackform.png" alt="Reference Feedback Form" style="border: 3px solid black;">
+                <div class="image-name">Feedback page</div>
+              </div>
+              <div class="image-wrapper">
+                  <img src="images/shopify.png" alt="Our Feedback Form" style="border: 3px solid black;">
+                <div class="image-name">Reference Feedback page</div>
+              </div>
+            </div>
+
+            <div class="description">
+                <h3>Description</h3>
+                <p>This is the section where we get to know our customer's personal details and their point of views and ideas. The feedback page is derived from "shopify" website which consists of the image on the right side in a kind of carousel. <br>
+                Our website consists of the feedback form with different options and validation of the empty fields as compared to the referenced site.</p>
+            </div>
+            <!-- End of class="Card_Reference" -->
+        </div>
+    <!-- End of class="Container" -->
+    </div>
+    <!-- Footer of the website which consits of the contact information of the website -->
+    <footer>
+        <div class="footer-container">
+          <div class="top footer-logo">
+            <div class="logo">
+              <img src="images/printerralogo.png" />
+              <h1>PRINTERRA</h1>
+            </div>
+            <div class="socials">
+              <img src="images/instagram.png" />
+              <img src="images/facebook.png" />
+              <img src="images/gmail.png" />
+            </div>
+            <div class="copyright">
+              <p>Copyright &copy; 2024 by Printerra.Inc. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="top address">
+            <h1 class="footer-head">Contact Info</h1>
+            <ul class="footer-description">
+              <li>kapan, Kathmandu</li>
+              <li>+977 9849591020, 01-4820006</li>
+            </ul>
+          </div>
+          <div class="top account">
+            <h1 class="footer-head">Account</h1>
+            <ul class="footer-description">
+              <li>My Account</li>
+              <li>My Orders</li>
+              <li>Sign in</li>
+              <li>Mobile app</li>
+            </ul>
+          </div>
+          <div class="top company">
+            <h1 class="footer-head">Company</h1>
+            <ul class="footer-description">
+              <li>About us</li>
+              <li>Terms & Condition</li>
+              <li>Return Policy</li>
+              <li>FAQs & Help</li>
+            </ul>
+          </div>
+          <div class="top others">
+            <h1 class="footer-head">Others</h1>
+            <ul class="footer-description">
+              <li>Sell on Printerra</li>
+              <li>Partnership</li>
+              <li>Printerra International</li>
+            </ul>
+          </div>
+        </div>
+    </footer>
+
+</body>
+</html>

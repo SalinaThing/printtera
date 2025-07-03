@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Salina Gurung">
+        <title>Printerra</title>
+        <link rel="Stylesheet" href="Style.css">
+        <!-- This is the CSS for the about us page -->
+        <style>
+        *, *:before, *:after {
+            box-sizing:border-box;
+        }
+        /*Different comparisons are diffrentiated into different type of section where they are compared individually*/
+        .a-section, .b-section, .c-section{
+            color: black;
+            padding:25px;
+            font-family: sans-serif;
+            padding-bottom: 15px;
+            padding-right:20px;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+
+        .row_AboutUs{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .column_AboutUs {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 16px;
+            padding: 0;
+        }
+
+        .column_AboutUs h2{
+            text-align: center;
+        }
+
+        .card_AboutUs {
+            margin-top: 50px;
+            width: 100%;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            padding: 56px 16px;
+            border-radius:10px;
+            color: black;
+            background-color: white;
+        }
+
+        .card_AboutUs img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .card_AboutUs h2 {
+            font-weight: 500;
+            color:darkred;
+        } 
+
+        .card_AboutUs p {
+            font-weight: 300;
+            margin: 8px 0 32px 0;
+            letter-spacing: 2px;
+        }
+
+        #image_AboutUs{
+            margin-left: 10px;
+        }
+
+        .d-section{
+            padding-top: 30px;
+        }   
+        .e-section{ 
+            display: flex;
+            justify-content: center;
+        }
+        /*this section consists of the developer portfolio button in a circular shape and also consists of the link to another page when clicked*/
+        .developers{ 
+            padding: 10px 20px;
+            font-size: 30px;
+            width: 280px;
+            background-color: white;
+            color: black;
+            border: black;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.5s;
+        }
+        .developers:hover {
+            background-color: black;
+            color: white;
+        }
+            </style>
+    </head>
+
+    <body>
+        <!-- Header of the about us page of the website that consists of the navigation bar -->
+        <header class="home-header">
+            <div class="logo">
+              <img src="images/printerralogo.png" />
+              <h1>PRINTERRA</h1>
+            </div>
+            <nav class="main-nav">
+              <ul class="main-nav-list">
+                <li><a class="main-nav-link" href="index.html">Home</a></li>
+                <li><a class="main-nav-link" href="product.html">Product</a></li>
+                <li><a class="main-nav-link" href="research.html">References</a></li>
+                <li><a class="main-nav-link" href="blog.html">Blog</a></li>
+                <li><a class="main-nav-link" href="aboutus.html">About Us</a></li>
+                <li><a class="main-nav-link" href="contactus.html">Contact us</a></li>
+              </ul>
+            </nav>
+            <div class="buttons">
+              <ul class="button-search">
+                <li>
+                  <img
+                    class="search-icon"
+                    src="images/searchbuttonnav.png"
+                    alt="icon"
+                  />
+                </li>
+                <li><img class="user-icon" src="images/userbuttonnav.png" /></li>
+              </ul>
+            </div>
+        </header>
+        <!-- Container that holds the information in this page -->
+        <div class="about-us" style="background-color:#faeff9;color:black;">
+            <h1 style="text-align: center; padding-top: 30px; font-size: 40px;" >ABOUT US</h1>
+
+            <!--Our Mission -->
+            <div class="a-section" style="text-align: left;">
+            <div class="card_AboutUs">
+                <h1 style="padding-top: 10px;"> Our Mission!!</h1>
+                <p> 
+                There's motive to grow bright until you've strong determination to shine. We believe hardwork can grow with failures, conscience and succeess.In the growing world, we have intense compeititions though hardwork and patience can pay timely.Here, We provide the best quality of printers in our websites with reasonable price.Also, we have best reliability services for our customers.
+                The Printerra was founded with the mission to provide the best service related to the growing world of technology. The world is becoming all softcopy and digital. The presence of the physical printed things are very less in the today's world. So printerra aims to provide a platform for the trading and uplifting of the printers in the modern world to still continue the legacy of the pages in physical forms. Printerra also is a humanitarian company which was also created for the welfare of the minorized people in the world so that the funding is used in many different way. So there are donation portals opened in the site as well. 
+                </p>
+            </div>
+            <!-- End of class="a-section" -->
+            </div>
+
+            <!--Our Stories-->
+            <div class="b-section">
+            <div class="card_AboutUs">
+                <h1> Our Stories</h1>
+                <p>
+                Printerrra is comprised of people of different background and different speciality. Some are from technical field whilst others are from management fields. There is also inclusion of people who are involed in philianthropic aspect of the community through the help of printerra. As with the discussed goal of printerra, all the creators are genuinely involved in the maintainence and welfare of the business, providing the best and efficient platform for the selling of printers. The creators of printerra while few in number are eager and efficient in any problem and have been providing he best quality services to the businesses and the customers involved. Alon with the integration new technology, printerra maintains the site with the help of its developer every week and the bugs and customer service is handled 24/7. So feel free to report anything. The people here at printerra are always ready to solve any issues related to the site as well as your inconvenience.
+                </p>
+            </div>
+            <!-- End of class="b-section" -->
+            </div>
+
+             <!--WHY US?-->
+            <div class="c-section">
+            <div class="card_AboutUs">
+                <h1>Why US?</h1>
+                <p>
+                We provide the best quality printers with reasonable price and quality. Not only this, we response to the customers needs and quieries as soon as possible. 
+                </p>
+                <P>Free Delivery <span style="color: green;">on all Orders</span></P>
+                <P>10 Days Returns<span style="color: green;">Moneyback Guarrantee</span></P>
+                <P>Offers and gifts<span style="color: green;">on all Orders</span></P>
+                <P>Save Payments <span style="color: green;">Protected by Paypal</span></P>
+                <P>Available on the market <span style="color: green;">Whole over Nepal and International level in Asian Countries</span></P> 
+            </div>
+            <!-- End of class="c-section" -->
+            </div>
+
+            <!-- Our Team -->
+            <div id="d-section">
+            <h1 style="text-align: center; padding-top: 30px; font-size: 40px;" >Our Team</h1>
+            <div class="row_AboutUs">
+            <!-- Column1 -->
+                <div class="column_AboutUs">
+                    <div class="card_AboutUs">
+                    <div id="image_AboutUs">
+                        <img src="images/Salina.jpg" alt="" style="width:200px;height: 200px;">
+                        <h2>Salina Thing</h2>
+                        <br>
+                        <p>Frontend Developer</p>
+                        <!--End of div id="image" -->
+                    </div>
+                    <!-- End of div class="card" -->
+                    </div>
+                    <!--End of div class="column" -->
+                </div>
+                <!-- Column2 -->
+                <div class="column_AboutUs">
+                    <div class="card_AboutUs">
+                    <div id="image_AboutUs">
+                        <img src="images/anurodh.png" alt="Anurodh" style="width:200px;height: 200px;">
+                        <h2>Anurodh Prasain</h2>
+                        <br>
+                        <p>Frontend Developer</p>
+                    </div>
+                    </div>
+                </div>
+                <!-- Column3 -->
+                <div class="column_AboutUs">
+                    <div class="card_AboutUs">
+                    <div id="image_AboutUs">
+                        <img src="images/aayush.png" alt="Aayush" style="width:200px;height: 200px;">
+                        <h2>Aayush Shrestha</h2>
+                        <br>
+                        <p>Frontend Developer</p>
+                    </div>
+                    </div>
+                </div>
+                <!-- Column4 -->
+                <div class="column_AboutUs">
+                    <div class="card_AboutUs">
+                    <div id="image_AboutUs">
+                    <img src="images/Rijesh.jpg" alt="Rijesh" style="width:200px; height: 200px;">
+                    <h2>Rijesh Karki</h2>
+                    <br>
+                    <p>Frontend Developer</p>
+                    </div>
+                </div>  
+                </div>
+            <!--End of class="row" -->
+            </div>
+            <!--End of class="d-section"-->
+            </div>
+            <div class="e-section">
+            <a href="description.html">
+                <button class="developers">See Developers</button>
+            </a>
+            <!--End of button"-->
+            </div>
+        <!-- End of class="about-us" =-->
+        </div>
+        <!-- Footer of the website that consists of the contact information of the website -->
+        <footer>
+            <div class="footer-container">
+            <div class="top footer-logo">
+                <div class="logo">
+                <img src="images/printerralogo.png" />
+                <h1>PRINTERRA</h1>
+                </div>
+                <div class="socials">
+                <img src="images/instagram.png" />
+                <img src="images/facebook.png" />
+                <img src="images/gmail.png" />
+                </div>
+                <div class="copyright">
+                <p>Copyright &copy; 2024 by Printerra.Inc. All rights reserved.</p>
+                </div>
+            </div>
+            <div class="top address">
+                <h1 class="footer-head">Contact Info</h1>
+                <ul class="footer-description">
+                <li>kapan, Kathmandu</li>
+                <li>+977 9849591020, 01-4820006</li>
+                </ul>
+            </div>
+            <div class="top account">
+                <h1 class="footer-head">Account</h1>
+                <ul class="footer-description">
+                <li>My Account</li>
+                <li>My Orders</li>
+                <li>Sign in</li>
+                <li>Mobile app</li>
+                </ul>
+            </div>
+            <div class="top company">
+                <h1 class="footer-head">Company</h1>
+                <ul class="footer-description">
+                <li>About us</li>
+                <li>Terms & Condition</li>
+                <li>Return Policy</li>
+                <li>FAQs & Help</li>
+                </ul>
+            </div>
+            <div class="top others">
+                <h1 class="footer-head">Others</h1>
+                <ul class="footer-description">
+                <li>Sell on Printerra</li>
+                <li>Partnership</li>
+                <li>Printerra International</li>
+                </ul>
+            </div>
+            </div>
+        </footer>
+    </body>
+</html>

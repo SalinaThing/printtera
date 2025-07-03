@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anurodh Prasai">
+    <title>Printerra</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f9f5f9;
+        }
+
+        .main-container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .first-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            align-items: center;
+
+        }
+
+        .image-container {
+            border: 2px solid black;
+            border-radius: 10px;
+            flex-basis: 40%;
+        }
+
+        .big-image {
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .small-image-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .small-image-container img {
+            width: 70px;
+            height: 70px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .body-container {
+            flex: 60%;
+            margin: 0 100px;
+        }
+
+        .body-button {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .body-button button {
+            width: 150px;
+            height: 50px;
+        }
+
+        .buy-now {
+            background-color: rgb(0, 93, 179);
+            color: white;
+            border-radius: 5px;
+        }
+
+        .buy-now:hover {
+            background-color: rgb(0, 130, 251);
+            border-radius: 15px;
+        }
+
+        .add-to-cart {
+            background-color: rgb(47, 47, 47);
+            color: white;
+            border-radius: 5px;
+        }
+
+        .add-to-cart:hover {
+            background-color: rgb(152, 146, 146);
+            border-radius: 15px;
+        }
+
+        .second-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 50px;
+        }
+
+        .information-title {
+            background-color: black;
+            color: white;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .information-body {
+            font-size: 20px;
+        }
+        /*Usage of the table tag in the website*/
+        table {
+            width: 550px;
+            text-align: left;
+            height: 400px;
+        }
+
+        .ratingsAndReviews {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .review-head {
+            background-color: black;
+            color: white;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .customer-review {
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .customer-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 3px;
+        }
+
+        .star-icons img {
+            width: 15px;
+        }
+
+        .review {
+            font-size: 15px;
+            margin-left: 3px;
+        }
+
+        .third-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            margin: 20px;
+        }
+
+        .container-title {
+            background-color: black;
+            width: fit-content;
+            color: white;
+            border-radius: 5px;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 20px 0;
+
+        }
+
+        .container-content {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .card {
+            width: 200px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .card:hover {
+            box-shadow: 0 5px 10px gray;
+
+        }
+
+        /* height is set to fixed to manage equal space inside card*/
+        .card>img {
+            max-width: 100%;
+            height: 210px;
+            max-height: 210px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* height is set to fixed to manage equal space inside card*/
+        .card-title {
+            color: rgb(0, 93, 179);
+            height: 63px;
+            max-height: 63px;
+            overflow: hidden;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .ratings>img {
+            width: 15px;
+        }
+
+        .card-price {
+            font-size: 15px;
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 8px;
+
+        }
+
+        .selling-price {
+            font-size: 20px;
+        }
+
+        .marked-price {
+            font-size: 13px;
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+
+        .card-button {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .card-button button {
+            width: 90px;
+            height: 35px;
+            border: none;
+            color: white;
+            font-size: 10px;
+        }
+
+        .card-button button:hover {
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .buy-now-button {
+            background-color: rgb(0, 93, 179);
+        }
+
+        .buy-now-button:hover {
+            background-color: rgb(0, 130, 251);
+        }
+
+        .add-to-cart-button {
+            background-color: rgb(47, 47, 47);
+        }
+
+        .add-to-cart-button:hover {
+            background-color: rgb(152, 146, 146);
+        }
+
+        .third-container {
+            overflow: scroll;
+        }
+
+        .container-content {
+            display: flex;
+            gap: 40px;
+            /* Make the inner container a flex container */
+
+        }
+
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 24px;
+
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--navigation bar-->
+    <header class="home-header">
+        <div class="logo">
+          <img src="images/printerralogo.png" />
+          <h1>PRINTERRA</h1>
+        </div>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li><a class="main-nav-link" href="index.html">Home</a></li>
+            <li><a class="main-nav-link" href="product.html">Product</a></li>
+            <li><a class="main-nav-link" href="research.html">References</a></li>
+            <li><a class="main-nav-link" href="blog.html">Blog</a></li>
+            <li><a class="main-nav-link" href="aboutus.html">About Us</a></li>
+            <li><a class="main-nav-link" href="contactus.html">Contact us</a></li>
+          </ul>
+        </nav>
+        <div class="buttons">
+          <ul class="button-search">
+            <li>
+              <img
+                class="search-icon"
+                src="images/searchbuttonnav.png"
+                alt="icon"
+              />
+            </li>
+            <li><img class="user-icon" src="images/userbuttonnav.png" /></li>
+          </ul>
+        </div>
+    </header>
+
+    <!-- Main container that consists of the description of the product -->
+    <div class="main-container">
+        <div class="first-container">
+            <div class="image-container">
+                <div class="big-image">
+                    <img src="images/canon1.jpeg" width="400px" height="300px" id="big-image" alt="">
+                </div>
+                <div class="small-image-container">
+                    <img src="images/canon1.jpeg" width="400px" height="300px" alt="" onclick="change_image(this)">
+                    <img src="images/canon2.jpeg" width="400px" height="300px" alt="" onclick="change_image(this)">
+                    <img src="images/canon3.jpeg" width="400px" height="300px" alt="" onclick="change_image(this)">
+                </div>
+            </div>
+            <div class="body-container">
+                <div class="body-title" style="font-size: 30px; font-weight: bold; color: rgb(0, 93, 179);">
+                    Canon MG2570S 3 In 1 Multi-Function Inkjet Colour Printer
+                </div>
+                <!-- When the images are clicked the related pictures of the products are shown in bigger picture mode on screen -->
+                <div class="ratings">
+                    <img src="images/starfull.png" style="width: 30px;">
+                    <img src="images/starfull.png" style="width: 30px;">
+                    <img src="images/starfull.png" style="width: 30px;">
+                    <img src="images/starfull.png" style="width: 30px;">
+                    <img src="images/starfull.png" style="width: 30px;">
+                </div>
+                <div class="body-best-deals"
+                    style="background-color: black; color: white; border-radius: 10px 3px; text-align: center; margin: 40px 0; padding: 10px;">
+                    <div class="head" style="font-size: 30px;">Check Out the Best Deals</div>
+                    <div class="body">Shop Now!</div>
+                </div>
+                <div class="body-price" style="margin: 20px 0;">
+                    <div class="selling-price" style="font-size: 50px;">
+                        Rs: 6999
+                    </div>
+                    <div class="marked-price" style="font-size: 30px;">
+                        7500
+                    </div>
+                </div>
+                <div class="quantity" style="display: flex; margin: 30px 0;">
+                    <div class="label"
+                        style="background-color: black; color: white; border: 1px solid black; border-radius: 5px; width: 100px; height: 30px; text-align: center; padding-top: 5px;">
+                        <label>Quantity:</label>
+                    </div>
+                    <div class="input">
+                        <input type="number" value="1"
+                            style="width: 70px; height: 30px; border: 2px solid black; border-radius: 3px; margin: 0 30px; text-align: center;">
+                    </div>
+                </div>
+                <div class="body-button">
+                    <button class="buy-now">Buy Now</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Consists the related information of the product -->
+        <div class="second-container">
+            <div class="product-information">
+                <div class="information-title">Product Information</div>
+                <div class="information-body">
+                    <table border="1">
+                        <tr class="row">
+                            <th>Model</th>
+                            <td>MG2570S</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Functionality</th>
+                            <td>Print, Scan, Copy</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Printing Technology</th>
+                            <td>Inkjet</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Connectivity</th>
+                            <td>High-speed USB 2.0</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Product Dimensions</th>
+                            <td>42.6 * 30.6 * 14.5 cm</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Item Weight</th>
+                            <td>3.5kg</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Manufacturer</th>
+                            <td>Canon Inc.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="ratingsAndReviews">
+                <div class="review-head">
+                    Ratings and Reviews
+                </div>
+                <!--Review 1-->
+                <div class="customer-review">
+                    <div class="customer-name">Dipesh Khadka</div>
+                    <div class="star-icons">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                    </div>
+                    <div class="review">
+                        Great Products.
+                    </div>
+                </div>
+                <!--Review 2-->
+                <div class="customer-review">
+                    <div class="customer-name">Prashant Khadka</div>
+                    <div class="star-icons">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="review">
+                        It has great quality.
+                    </div>
+                </div>
+                <!--Review 3-->
+                <div class="customer-review">
+                    <div class="customer-name">Narbu Tamang</div>
+                    <div class="star-icons">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                    </div>
+                    <div class="review">
+                        Great Products.
+                    </div>
+                </div>
+                <!--Review 4-->
+                <div class="customer-review">
+                    <div class="customer-name">Bhanu Limbu</div>
+                    <div class="star-icons">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="review">
+                        Great Products.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-title">
+            You may also like
+        </div>
+
+
+        <div class="third-container">
+            <div class="container-content">
+
+                <!--product1-->
+                <div class="card">
+                    <img src="images/blueprinter.jpeg" alt="Product Image">
+                    <div class="card-title">Brother Laser Printer Toner</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 175
+                        </div>
+                        <div class="marked-price">
+                            225
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product2-->
+
+                <div class="card">
+                    <img src="images/inkjetprinter.jpg" alt="Product Image">
+                    <a href="ProductDiscription.html">
+                        <div class="card-title">Canon MG2570S 3 In 1 Multi-Function Inkjet Colour Printer</div>
+                    </a>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 6,999
+                        </div>
+                        <div class="marked-price">
+                            7,500
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!--product3-->
+                <div class="card">
+                    <img src="images/toner.jpeg" alt="Product Image">
+                    <div class="card-title">Brother Toner Xlab-50gm</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 150
+                        </div>
+                        <div class="marked-price">
+                            170
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product4-->
+                <div class="card">
+                    <img src="images/canon3.jpeg" alt="Product Image">
+                    <div class="card-title">MP USB Printer Cable 1.5m High Speed 3.0</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 1,490
+                        </div>
+                        <div class="marked-price">
+                            1,600
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product5-->
+                <div class="card">
+                    <img src="images/anotherhpprinter.jpeg"
+                        alt="Product Image">
+                    <div class="card-title">Brother Printer Wireless All In One, Automatic 2 Sided Features, Mobile &
+                        Cloud Print And Scan ,Ink Tank Printer- DCP T720DW</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 36,999
+                        </div>
+                        <div class="marked-price">
+                            45,000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product6-->
+                <div class="card">
+                    <img src="images/anotherblackprinter.jpeg" alt="Product Image">
+                    <div class="card-title">Epson 3110 Ink</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 1,215
+                        </div>
+                        <div class="marked-price">
+                            1,240
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product7-->
+                <div class="card">
+                    <img src="images/hpprinter.jpeg" alt="Product Image">
+                    <div class="card-title">Epson 3220 Ink</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 1,200
+                        </div>
+                        <div class="marked-price">
+                            1,211
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+
+                </div>
+                <!--product8-->
+                <div class="card">
+                <img src="images/canon3.jpeg" alt="Product Image">
+                <div class="card-title">Canon 2250</div>
+                <div class="ratings">
+                    <img src="images/starfull.png">
+                    <img src="images/starfull.png">
+                    <img src="images/starfull.png">
+                    <img src="images/starhalf.png">
+                    <img src="images/starnothing.png">
+                </div>
+                <div class="card-price">
+                    <div class="selling-price">
+                        Rs: 3,220
+                    </div>
+                    <div class="marked-price">
+                        3,220
+                    </div>
+                </div>
+                <div class="card-button">
+                    <button class="buy-now-button">Buy Now</button>
+                    <button class="add-to-cart-button">Add to Cart</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer consist of the website's contact information -->
+    <footer>
+        <div class="footer-container">
+          <div class="top footer-logo">
+            <div class="logo">
+              <img src="images/printerralogo.png" />
+              <h1>PRINTERRA</h1>
+            </div>
+            <div class="socials">
+              <img src="images/instagram.png" />
+              <img src="images/facebook.png" />
+              <img src="images/gmail.png" />
+            </div>
+            <div class="copyright">
+              <p>Copyright &copy; 2024 by Printerra.Inc. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="top address">
+            <h1 class="footer-head">Contact Info</h1>
+            <ul class="footer-description">
+              <li>kapan, Kathmandu</li>
+              <li>+977 9849591020, 01-4820006</li>
+            </ul>
+          </div>
+          <div class="top account">
+            <h1 class="footer-head">Account</h1>
+            <ul class="footer-description">
+              <li>My Account</li>
+              <li>My Orders</li>
+              <li>Sign in</li>
+              <li>Mobile app</li>
+            </ul>
+          </div>
+          <div class="top company">
+            <h1 class="footer-head">Company</h1>
+            <ul class="footer-description">
+              <li>About us</li>
+              <li>Terms & Condition</li>
+              <li>Return Policy</li>
+              <li>FAQs & Help</li>
+            </ul>
+          </div>
+          <div class="top others">
+            <h1 class="footer-head">Others</h1>
+            <ul class="footer-description">
+              <li>Sell on Printerra</li>
+              <li>Partnership</li>
+              <li>Printerra International</li>
+            </ul>
+          </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function change_image(smallImg) {
+            var fullImg = document.getElementById("big-image");
+            fullImg.src = smallImg.src;
+        }
+    </script>
+    </body>
+</html>

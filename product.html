@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anurodh Prasai">
+    <title>Printerra</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- This consists of the css for product page -->
+    <style>
+        body {
+            background-color: #f9f5f9;
+        }
+
+        /*main container of the products*/
+        .main-container {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .sidebar {
+            flex: 15%;
+            height: fit-content;
+            border-radius: 10px;
+            position: fixed;
+        }
+
+        /* for all the titles of the sidebar*/
+        .filters-title {
+            background-color: black;
+            color: white;
+            box-sizing: border-box;
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+        }
+        /*Consists of the category sidebar*/
+        .categories label,
+        .brands label {
+            color: rgb(0, 93, 179);
+        }
+
+        .filters-body {
+            margin-left: 15px;
+        }
+
+        .price {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        
+        #minPrice,
+        #maxPrice {
+            width: 90px;
+            height: 35px;
+            border: 1 solid rgb(0, 93, 179);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .apply-button {
+            width: 90px;
+            height: 30px;
+            background-color: rgb(0, 93, 179);
+            color: white;
+            margin: 15px 50px;
+        }
+
+        .apply-button:hover {
+            background-color: rgb(0, 130, 251);
+            font-size: 13px;
+        }
+
+
+        .products {
+            flex: 85%;
+            margin-left: 325px;
+
+        }
+
+        .sortby {
+            display: inline-block;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            margin-bottom: 20px;
+        }
+
+        .products-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+        /*this is the cards where different types of products are held in the product page*/
+        .card {
+            width: 240px;
+            height: 430px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .card:hover {
+            box-shadow: 0 5px 10px gray;
+        }
+
+        /* height is set to fixed to manage equal space inside card*/
+        .card>img {
+            max-width: 100%;
+            height: 210px;
+            max-height: 210px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* height is set to fixed to manage equal space inside card*/
+        .card-title {
+            height: 63px;
+            max-height: 63px;
+            overflow: hidden;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 0;
+            color: rgb(0, 93, 179);
+        }
+
+        .ratings>img {
+            width: 15px;
+        }
+
+        .card-price {
+            font-size: 15px;
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 8px;
+
+        }
+
+        .selling-price {
+            font-size: 20px;
+        }
+
+        .marked-price {
+            font-size: 13px;
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+
+        .card-button {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        button {
+            width: 90px;
+            height: 35px;
+            border: none;
+            color: white;
+            font-size: 10px;
+        }
+
+        button:hover {
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .buy-now-button {
+            background-color: rgb(0, 93, 179);
+        }
+
+        .buy-now-button:hover {
+            background-color: rgb(0, 130, 251);
+        }
+
+        .add-to-cart-button {
+            background-color: rgb(47, 47, 47);
+        }
+
+        .add-to-cart-button:hover {
+            background-color: rgb(152, 146, 146);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--navigation bar-->
+    <header class="home-header">
+        <div class="logo">
+          <img src="images/printerralogo.png" />
+          <h1>PRINTERRA</h1>
+        </div>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li><a class="main-nav-link" href="index.html">Home</a></li>
+            <li><a class="main-nav-link" href="product.html">Product</a></li>
+            <li><a class="main-nav-link" href="research.html">References</a></li>
+            <li><a class="main-nav-link" href="blog.html">Blog</a></li>
+  
+            <li><a class="main-nav-link" href="aboutus.html">About Us</a></li>
+            <li><a class="main-nav-link" href="contactus.html">Contact us</a></li>
+          </ul>
+        </nav>
+        <div class="buttons">
+          <ul class="button-search">
+            <li>
+              <img
+                class="search-icon"
+                src="images/searchbuttonnav.png"
+                alt="icon"
+              />
+            </li>
+            <li><img class="user-icon" src="images/userbuttonnav.png" /></li>
+          </ul>
+        </div>
+    </header>
+    <div class="main-container">
+
+        <!--for sidebar-->
+        <div class="sidebar">
+            <!--by categories-->
+            <div class="products-contents">
+                <!--Categories Title-->
+                <div class="filters-title" id="categories">Categories</div>
+                <!--Categories Body-->
+                <div class="filters-body">
+                    <div class="categories">
+                        <input type="radio" id="printers" name="categories">
+                        <label for="printers">Printers </label>
+                    </div>
+                    <div class="categories">
+                        <input type="radio" id="tonerAndInk" name="categories">
+                        <label for="tonerAndInk">Toner and Ink</label><br>
+                    </div>
+                    <div class="categories">
+                        <input type="radio" id="cables" name="categories">
+                        <label for="cables">Cables </label>
+                    </div>
+                    <div class="categories">
+                        <input type="radio" id="accessories" name="categories">
+                        <label for="accessories">Accessories </label>
+                    </div>
+                </div>
+            </div>
+            <!--by price-->
+            <div class="products-contents">
+                <!--Product Title-->
+                <div class="filters-title" id="price">Price</div>
+                <!--Product Body-->
+                <div class="filters-body">
+                    <div class="price">
+                        <input type="text" id="minPrice" name="minPrice" placeholder="Min">
+                        <input type="text" id="maxPrice" name="maxPrice" placeholder="Max">
+                    </div>
+                </div>
+            </div>
+            <!--by brand-->
+            <div class="products-contents">
+                <!--Brand Title-->
+                <div class="filters-title" id="brand">Brand</div>
+                <!--Brand Body-->
+                <div class="filters-body">
+                    <div class="brands">
+                        <input type="radio" name="brandname">
+                        <label for="canon">Canon</label><br>
+                    </div>
+                    <div class="brands">
+                        <input type="radio" name="brandname">
+                        <label for="canon">Epson</label><br>
+                    </div>
+                    <div class="brands">
+                        <input type="radio" name="brandname">
+                        <label for="brother">Brother</label><br>
+                    </div>
+                </div>
+            </div>
+            <button class="apply-button">Apply</button>
+        </div>
+
+        <!--for product section-->
+        <div class="products">
+            <!--Sorting by low to high, high to low-->
+            <div class="sortby">
+                <div class="sortby-label"
+                    style="width: 100px; background-color: black; color: white; text-align: center;border-radius: 5px; padding-top: 6px;">
+                    <label for="sortby">Sort By</label>
+                </div>
+                <div class="options">
+                    <select id="sortby"
+                        style="width: 100px; height: 30px; background-color: rgb(193, 193, 193); border-radius: 5px; text-align: center;">
+                        <option>Default</option>
+                        <option>Popularity</option>
+                        <option>Latest</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-wrapper">
+                <!--product1-->
+                <div class="card">
+                    <img src="images/blackprinter.jpeg" alt="Product Image">
+                    <div class="card-title">Brother Laser Printer Toner</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 175
+                        </div>
+                        <div class="marked-price">
+                            225
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product2-->
+
+                <div class="card">
+                    <img src="images/anotherblackprinter.jpeg" alt="Product Image">
+                    <a href="ProductDescription.html">
+                        <div class="card-title">Canon MG2570S 3 In 1 Multi-Function Inkjet Colour Printer</div>
+                    </a>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 6,999
+                        </div>
+                        <div class="marked-price">
+                            7,500
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!--product3-->
+                <div class="card">
+                    <img src="images/toner.jpeg" alt="Product Image">
+                    <div class="card-title">Brother Toner Xlab-50gm</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 150
+                        </div>
+                        <div class="marked-price">
+                            170
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product4-->
+                <div class="card">
+                    <img src="images/cable.jpg" alt="Product Image">
+                    <div class="card-title">MP USB Printer Cable 1.5m High Speed 3.0</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 1,490
+                        </div>
+                        <div class="marked-price">
+                            1,600
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product5-->
+                <div class="card">
+                    <img src="images/canonprinter.jpeg"
+                        alt="Product Image">
+                    <div class="card-title">Brother Printer Wireless All In One, Automatic 2 Sided Features, Mobile &
+                        Cloud Print And Scan ,Ink Tank Printer- DCP T720DW</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 36,999
+                        </div>
+                        <div class="marked-price">
+                            45,000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product6-->
+                <div class="card">
+                    <img src="images/inkjetprinter.jpg" alt="Product Image">
+                    <div class="card-title">Epson 3110 Ink</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 1,215
+                        </div>
+                        <div class="marked-price">
+                            1,240
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product7-->
+                <div class="card">
+                    <img src="images/canonprinter.jpeg"
+                        alt="Product Image">
+                    <div class="card-title">Canon MAXIFY GX6070 3 in 1 Wireless Multi-Function Auto-Duplex Colour Ink
+                        Tank Business Printer For High Volume Printing</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 49,999
+                        </div>
+                        <div class="marked-price">
+                            55,000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product8-->
+                <div class="card">
+                    <img src="images/blackprinter.jpeg"
+                        alt="Product Image">
+                    <div class="card-title">Color Laser Printer Brother HL-L3270CDW LED With Wireless & Network
+                        Connectivity, Automatic 2-sided Color Print</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 57,999
+                        </div>
+                        <div class="marked-price">
+                            75,000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product9-->
+                <div class="card">
+                    <img src="images/thermalprinter.jpeg" alt="Product Image">
+                    <div class="card-title">Sublimation Epson Printer L130 (4 color + A4 Size)</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 29999
+                        </div>
+                        <div class="marked-price">
+                            32000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product10-->
+                <div class="card">
+                    <img src="images/cable.jpg" alt="Product Image">
+                    <div class="card-title">Printer Cable 1.5 Meter USB 2.0</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 123
+                        </div>
+                        <div class="marked-price">
+                            300
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product11-->
+                <div class="card">
+                    <img src="images/canonprinter.jpeg"
+                        alt="Product Image">
+                    <div class="card-title">Epson EcoTank L3210 All-in-One Ink Tank Printer Print Copy Scan</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 22,999
+                        </div>
+                        <div class="marked-price">
+                            28,000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product12-->
+                <div class="card">
+                    <img src="images/blueprinter.jpeg" alt="Product Image">
+                    <div class="card-title"> Canon MG2580S</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 7,999
+                        </div>
+                        <div class="marked-price">
+                            9,000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product13-->
+                <div class="card">
+                    <img src="images/blackprinter.jpeg" alt="Product Image">
+                    <div class="card-title">Printer Epson Monochrome M1100 Ink tonk</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 35,999
+                        </div>
+                        <div class="marked-price">
+                            40,000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product14-->
+                <div class="card">
+                    <img src="images/anotherwhiteprinter.jpeg" alt="Product Image">
+                    <div class="card-title"> Canon MG2590S</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starhalf.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 8,999
+                        </div>
+                        <div class="marked-price">
+                            10,000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product15-->
+                <div class="card">
+                    <img src="images/cable3.jpeg"
+                        alt="Product Image">
+                    <div class="card-title">Terabyte Usb 5 Meter (15 Feet) AB Printer Cable 3.02.0 (High Speed)</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starfull.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 433
+                        </div>
+                        <div class="marked-price">
+                            800
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+                <!--product16-->
+                <div class="card">
+                    <img src="images/anotherhpprinter.jpeg" alt="Product Image">
+                    <div class="card-title">Brother Printer DCP-L2540DW</div>
+                    <div class="ratings">
+                        <img src="images/starfull.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                        <img src="images/starnothing.png">
+                    </div>
+                    <div class="card-price">
+                        <div class="selling-price">
+                            Rs: 34,999
+                        </div>
+                        <div class="marked-price">
+                            37,000
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button class="buy-now-button">Buy Now</button>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- this is the footer of the website consisting of the contact information -->
+    <footer>
+        <div class="footer-container">
+          <div class="top footer-logo">
+            <div class="logo">
+              <img src="images/printerralogo.png" />
+              <h1>PRINTERRA</h1>
+            </div>
+            <div class="socials">
+              <img src="images/instagram.png" />
+              <img src="images/facebook.png" />
+              <img src="images/gmail.png" />
+            </div>
+            <div class="copyright">
+              <p>Copyright &copy; 2024 by Printerra.Inc. All rights reserved.</p>
+            </div>
+          </div>
+          <div class="top address">
+            <h1 class="footer-head">Contact Info</h1>
+            <ul class="footer-description">
+              <li>kapan, Kathmandu</li>
+              <li>+977 9849591020, 01-4820006</li>
+            </ul>
+          </div>
+          <div class="top account">
+            <h1 class="footer-head">Account</h1>
+            <ul class="footer-description">
+              <li>My Account</li>
+              <li>My Orders</li>
+              <li>Sign in</li>
+              <li>Mobile app</li>
+            </ul>
+          </div>
+          <div class="top company">
+            <h1 class="footer-head">Company</h1>
+            <ul class="footer-description">
+              <li>About us</li>
+              <li>Terms & Condition</li>
+              <li>Return Policy</li>
+              <li>FAQs & Help</li>
+            </ul>
+          </div>
+          <div class="top others">
+            <h1 class="footer-head">Others</h1>
+            <ul class="footer-description">
+              <li>Sell on Printerra</li>
+              <li>Partnership</li>
+              <li>Printerra International</li>
+            </ul>
+          </div>
+        </div>
+    </footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get all the "Add to Cart" buttons
+        var addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+
+        // Add click event listener to each button
+        addToCartButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                // Display an alert message when the button is clicked
+                alert('Product added to cart successfully');
+            });
+        });
+    });
+</script>
+
+</html>
